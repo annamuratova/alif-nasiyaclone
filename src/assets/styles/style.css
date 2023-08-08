@@ -527,14 +527,14 @@ a:hover {
     padding: 40px 10px;
   }
 }
-.contact__btn {
+.contact .contact__btn {
   background-color: #5ecda2;
   margin-top: 25px;
 }
-.contact__btn:hover {
+.contact .contact__btn:hover {
   background-color: aquamarine;
 }
-.contact__btn a {
+.contact .contact__btn a {
   color: #fff;
   font-size: 18px;
 }
