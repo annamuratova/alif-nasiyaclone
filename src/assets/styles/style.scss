@@ -437,6 +437,9 @@
     background-color: $muted;
     text-align: center;
     padding: $xl-4 0;
+    @media(max-width:400px){
+       padding: $xl-4 $md; 
+    }
     &__btn{
         background-color: #5ecda2;
         margin-top: $xl-2;

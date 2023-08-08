@@ -522,6 +522,11 @@ a:hover {
   text-align: center;
   padding: 40px 0;
 }
+@media (max-width: 400px) {
+  .contact {
+    padding: 40px 10px;
+  }
+}
 .contact__btn {
   background-color: #5ecda2;
   margin-top: 25px;

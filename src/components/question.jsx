@@ -8,7 +8,7 @@ import { useState } from "react";
     }
     return(
         <div className={isActive? 'question-wrapper active' : 'question-wrapper'}>
-            <div className='question' id={props.id}>
+            <div className='question' id={props.id} onClick={() => handleClick(props.id)}>
             <p>{props.question}</p>
             <button onClick={() => handleClick(props.id)}>
                 <svg className={isActive? 'active' : ''} viewBox="0 0 320 512" width="100" title="angle-down">
