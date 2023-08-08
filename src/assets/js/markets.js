@@ -1,0 +1,33 @@
+
+export const marketsData = [
+    {
+        img:"images/idea.png",
+    },
+    {
+        img:"images/mediapark.png",
+    },
+    {
+        img:"images/texnomart.png",
+    },
+    {
+        img:"images/store.png",
+    },
+    {
+        img:"images/mediapark.png",
+    },
+    {
+        img:"images/idea.png",
+    },
+    {
+        img:"images/mediapark.png",
+    },
+    {
+        img:"images/texnomart.png",
+    },
+    {
+        img:"images/store.png",
+    },
+    {
+        img:"images/idea.png",
+    },
+];

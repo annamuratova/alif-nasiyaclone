@@ -1,0 +1,36 @@
+$sm:5px;
+$md:10px;
+$xl:15px;
+$xl-1:20px;
+$xl-2:25px;
+$xl-3:30px;
+$xl-4:40px;
+$xl-5:45px;
+$xll:60px;
+
+$text-color:#000;
+$muted:rgba(128, 128, 128, 0.044);
+
+@mixin flex( $align, $justify){
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+@mixin grid($columns, $gap) {
+    display: grid;
+    grid-template-columns: $columns;
+    grid-gap: $gap;
+  }
+
+a{
+    text-decoration: none;
+    color: $text-color;
+}
+a:hover{
+    color: aqua;
+}
+.title{
+    font-weight: 700;
+    font-size: $xl-4;
+}

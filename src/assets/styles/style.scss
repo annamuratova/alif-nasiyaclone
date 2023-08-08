@@ -1,0 +1,584 @@
+@import "./global";
+
+
+
+.header{
+    padding: $xl 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    opacity: .8;
+    z-index: 1;
+    &__container{
+        @include flex (center, space-between);
+        .navbar{
+            @include flex(center, center);
+            gap: $xl-3;
+            .menu-burger{
+                display: none;
+                background-color: #fff;
+                position: relative;
+                @media (max-width:1000px){
+                    @include flex (center, center);
+                }
+               span{
+                display: inline-block;
+                width: $xl;
+                height: 2px;
+                background-color: $text-color;
+               }
+                &::after{
+                    content: "";
+                    width: $xl;
+                    height: 2px;
+                    background-color: $text-color;
+                    position: absolute;
+                    bottom: -4px;
+                }
+                &::before{
+                    content: "";
+                    width: $xl;
+                    height: 2px;
+                    background-color: $text-color;
+                    position: absolute;
+                    top: -4px; 
+                }
+            }
+            &__links{
+                @include flex (center, center);
+                gap: $xl-2;
+                @media(max-width:1000px){
+                    display: none;
+                }
+            }
+        }
+    }
+    &__buttons{
+        @include flex(center, center);
+        .btn-lang{
+            background-color: inherit;
+            span{
+                margin-left: $sm;
+                display: inline-block;
+                @media(max-width: 640px){
+                    display: none;
+                }
+            }
+        }
+        .btn{
+            border: 1px solid rgba(128, 128, 128, 0.225);
+            margin-left: $md;
+            font-weight: 500;
+            @media(max-width:1000px){
+                display: none;
+            }
+        }
+    }
+}
+.menu{
+    display: flex;
+    flex-direction: column;
+    gap: $xl;
+    font-size: 18xp;
+    background-color: #fff;
+    opacity: 1 !important;
+    z-index: 5;
+    &__link{
+        background-color: rgba(128, 128, 128, 0.071);
+        padding: 7px;
+        border-radius: $md;
+    }
+    .height{
+        height: $xl-4;
+    }
+    &__buttons{
+        @include flex (center, center);
+        gap:$md;
+        button{
+            background-color: #fff;
+            border: 1px solid rgba(128, 128, 128, 0.225);
+            width: 50%;
+            height: $xl-4;
+        }
+    }
+}
+
+.main-head{
+    padding: $xl-4 0;
+    margin-top: 70px;
+    .banner{
+        img{
+            width: 100%;
+            border-radius: $xl-1;
+        }
+    }
+    &__cards{
+        @include grid(repeat(4, 1fr), $xl-2);
+        padding: $xl-3 0;
+        @media(max-width:1000px){
+        @include grid(repeat(2, 1fr), $xl-2);
+        }
+        @media(max-width:576px){
+            grid-gap:$md;
+        }
+        .card{
+            padding: $xl-1;
+            text-align: center;
+            border-radius: $xl;
+            @media(max-width:576px){
+                padding: $md;
+            }
+            &__img{
+                @include flex (center, center);
+                width:$xl-5;
+                height: $xl-5;
+                margin: $md auto;
+                 background-color: rgba(127, 255, 212, 0.349);
+                border-radius: $xl;
+            }
+            .first-img{
+                background-color: rgba(0, 0, 255, 0.089);
+            }
+           .second-img{
+            background-color: rgb(235, 235, 244);
+           } 
+           .img4{
+            background-color:rgba(255, 192, 203, 0.686);
+           }
+        }
+    }
+}
+
+.payment{
+    &__cards{
+        padding: $xl-3 0;
+        @include grid (repeat(3, 1fr), $xl-1);
+        @media(max-width:900px){
+            @include grid (repeat(2, 1fr), $xl-2);
+        }
+        @media(max-width:580px){
+            @include grid (repeat(1, 1fr), $xl-2);
+        }
+        .card{
+            border: none;
+            &__img{
+                padding-top: $xl-2;
+                text-align: center;
+                background-color: rgba(30, 143, 255, 0.203);
+                border-radius: $xl;
+            }
+            &__text{
+                font-size: 18px;
+                margin-top: $xl-1;
+            }
+           &:nth-child(2){
+              .card__img{
+                background-color: rgba(255, 0, 255, 0.136);
+              }  
+           }
+           &:nth-child(3){
+            .card__img{
+             background-color: rgba(127, 255, 212, 0.248);
+            }  
+         }
+        }
+    }
+}
+
+.payCards{
+    padding: $xl 0;
+    .title{
+        max-width: 600px;
+    }
+    .cards{
+        padding: $xl-3 0 $md;
+        @include grid(repeat(3, 1fr), $xl-1);
+        @media (max-width:700px){
+            @include grid(repeat(1, 1fr), $md);
+        }
+        .card{
+            border: none;
+            padding: $xl;
+            background-color: $muted;
+            border-radius: $xl;
+              &__img{
+                img{
+                    margin-right: $md;
+                }
+              }
+            &__text{
+                margin-top: $md;
+            }
+            &__link{
+                color: blue;
+                display: none;
+                @media (max-width:940px){
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.markets{
+    padding: $xl-4 0;
+    &__grid{
+        padding: $xl-2 0;
+        @include grid(repeat(5, 1fr), 22px);
+        @media(max-width:1020px){
+            @include grid(repeat(3, 1fr), $xl-2);
+        }
+        @media(max-width:770px){
+            @include grid(repeat(2, 1fr), $md);
+        }
+        .brend{
+        display: block;
+        @include flex (center, center);
+          height: 110px;
+         background-color:$muted;
+         border-radius: $xl-1;
+         img{
+            mix-blend-mode:multiply;
+            width: 100%;
+         }
+        }
+    }
+    &__btn{
+      font-size: 18px;
+      background-color: #55c89c;
+      margin-bottom: $xl-4;
+      &:hover{
+        background-color: #80e4be;
+      }
+      a{
+        color: #fff;
+      }
+    }
+}
+
+.mobile-app{
+     background-image: linear-gradient(127.81deg, rgb(131, 239, 196), rgb(52, 211, 153));
+    background-position-x: initial;
+    .container-md{
+        padding-top: 100px;
+        @include flex(flex-start,flex-start);
+         gap: 100px;
+         @media (max-width:1000px){
+            flex-direction: column;
+            padding-top: $xl-3;
+            align-items: center;
+         }
+    }
+    &__left{
+        padding-right: $xl-5;
+        .title{
+            max-width: 500px;
+            font-size: 50px;
+            line-height: 1;
+        }
+        @media (max-width:1000px){
+            padding-right: 0;
+            .title{
+                font-size: $xl-2;
+                text-align: center;
+            }
+        }
+    }
+    &__flex{
+        @include flex(center,flex-start);
+        gap: $xl-3;
+        margin-top: $xl-4;
+        @media(max-width:1000px){
+            justify-content: center;
+        }
+        a{
+            width: 170px;
+            background-color: #000;
+            color: #fff;
+            padding: 0 $xl;
+            border-radius: $md;
+            @include flex(center, spase-between);
+            gap: $sm;
+            &::hover{
+                color: transparent;
+            }
+            @media(max-width:380px){
+                padding: 0 $md;
+                width: 130px;
+            }
+            span{
+                font-size: $md;
+            }
+            p{
+                 margin: 0;
+                 margin-bottom: $md;
+                line-height: .7;
+                font-size: $xl-1;
+                @media(max-width:380px){
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+   &__right{
+    .img2{
+        display: none;
+        @media(max-width: 1000px){
+            display: block;
+            max-width: 100%;
+        }
+    }
+    .img1{
+        @media(max-width:1000px){
+            display: none;
+        }
+    }
+    }   
+}
+
+.questions{
+    padding: 80px 0;
+    text-align: center;
+    @media(max-width:700px){
+        .title{
+            font-size: $xl-3;
+        }
+    }
+    &__content{
+        padding: $xl-4 0;
+        .question-wrapper {
+            width: 42rem;
+            margin: 0 auto;
+            padding: 1rem;
+            transition: 1s;
+            @media (max-width:700px){
+                width: 90%;
+            }
+            .question {
+               @include flex(flex-start, space-between);
+                font-size: $xl-1;
+                font-weight: 500;
+                color: #0000008f;  
+               padding:  $xl-1 $xl-2;
+               border-radius: 13px;
+               cursor: pointer;
+               text-align: left;
+               @media(max-width:700px){
+                font-size: $xl;
+               }
+               p{
+                margin-bottom: 0;
+                max-width: 80%;
+               }
+                svg {
+                    width: .8rem;
+                    height: 1.2rem;
+                    fill: $text-color;
+                  }
+                  
+                  svg.active {
+                    transform: rotate(180deg);
+                  } 
+                  &:hover{
+                    background-color:$muted;
+                  }   
+          }
+          button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+          }
+          
+          button:focus {
+            outline: none;
+          }
+          .answer {
+            display: none;
+          }
+          
+          .answer.active {
+            display: block;
+            padding: $xl $xl-2;
+            text-align: left;
+            font-weight: light;
+             font-size: 18px;
+            line-height: 1.5;
+            color: $text-color;
+            height: 0%;
+            animation: slidein 0.4s;
+            animation-fill-mode: forwards;
+            @media(max-width:700px){
+                font-size: 16px;
+            }
+          }
+        }
+       .question-wrapper.active{
+        background-color: $muted;
+        border-radius: 13px;
+        .question:hover{
+            background-color: transparent;
+        }
+       } 
+    }
+}
+
+@keyframes slidein {
+    from {
+      opacity: 0.3;
+      transform: translateY(-20%)
+    } to {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+
+  .contact{
+    background-color: $muted;
+    text-align: center;
+    padding: $xl-4 0;
+    &__btn{
+        background-color: #5ecda2;
+        margin-top: $xl-2;
+        &:hover{
+            background-color: aquamarine;
+        }
+         a{
+            color: #fff;
+            font-size: 18px;
+         }   
+    }
+  }
+
+  .footer{
+    padding: $xl-5 0;
+    .container-md{
+        @include flex(center, space-between);
+        @media(max-width: 1000px){
+            flex-direction: column;
+            gap: $xl-2;
+        }
+    }
+    &__links{
+        a{
+            margin: 0 $xl;
+        }
+    }
+    &__right{
+        font-weight: 500;
+        span{
+            margin-right: $xl;
+        }
+    }
+  }
+
+  .message{
+    // width: 336px;
+    .open{
+        width: 336px;
+        background-color: #000;
+        color: #fff;
+        height: $xl-5;
+        border-radius: $md $xl-2 0 0;
+        position: fixed;
+        bottom: 0;
+        right: $xl-1;
+        @media(max-width:400px){
+            right: 0;
+            max-width: 250px;
+        }
+    }
+    .btn-close{
+        font-size: 12px;
+        border: 1px solid;
+        border-radius: 50%;
+        padding: 6px;
+        position: absolute;
+        left: -10%;
+        top: 2px;
+        background-color: #fff;
+        opacity: 1;
+        @media (max-width:400px){
+            left: 0;
+            top:-25px;
+        }
+    }
+    .send-message{
+        height: 0;
+        width: 336px;
+        background-color: #fff;
+        box-shadow: 0px 9px 15px #0000005f;
+        position: fixed;
+        bottom: -100%;
+        right: $xl-1;
+        border-radius: $md $xl-2 0 0;
+        transition: all .5s;
+        @media(max-width:400px){
+            right: 0;
+            max-width: 250px;
+        }
+        &__head{
+            background-color: #000;
+            color: #fff;
+            height: 18%;
+            border-radius: $md $xl-2 0 0;
+            padding: $xl;
+            p{
+                margin: 0;
+                line-height: 1;
+            }
+            span{
+                font-size: 12px;
+                opacity: .8;
+            }
+        }
+        &__content{
+            height: 55%;
+            padding: $xl-4 $xl-2 $xl-2 $xl-2;
+            // overflow-y: scroll;
+            .answer{
+                position: relative;
+                width: 220px;
+                margin-left: auto;
+                font-size: 18px;
+                background-color: $muted;
+                padding: $md;
+                img{
+                    position: absolute;
+                    left: -15%;
+                    bottom: 0;
+                    border-radius: 50%;
+                }
+            }
+        }
+        &__form{
+            border-top: 2px solid rgba(128, 128, 128, 0.301);
+            padding: $md $xl;
+            
+            input{
+                border: none;
+                width: 85%;
+                outline: none;
+            }
+            span{
+                display: inline-block;
+                background-color: $muted;
+                 padding-top: 2px;
+                width: 34px;
+                height: 34px;
+                color: #fff;
+                text-align: center;
+                border-radius: 50%;
+            }
+          .green{
+            background-color: #72d6b0;
+          }  
+        }
+    }
+    .send-message.show{
+        height: 55vh;
+        position: fixed;
+        bottom: 0;
+        width: 336px;
+    }
+  }
