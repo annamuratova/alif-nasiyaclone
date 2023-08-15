@@ -1,4 +1,4 @@
-export const questionData = [
+export const faqs = [
     {
         id:1,
         question:"Limit bu nima",

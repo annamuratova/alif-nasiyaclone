@@ -23,11 +23,11 @@ $muted:rgba(128, 128, 128, 0.044);
     grid-gap: $gap;
   }
 
-a{
-    text-decoration: none !important;
-    color: $text-color !important;
+.link{
+    text-decoration: none;
+    color: $text-color;
 }
-a:hover{
+.link:hover{
     color: aqua;
 }
 .title{

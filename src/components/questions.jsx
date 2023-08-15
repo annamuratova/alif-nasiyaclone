@@ -1,9 +1,16 @@
  
-import { questionData} from "../assets/js/questions";
+import {faqs} from "../assets/js/questions";
 import Question from "./question";
-
+import { useState } from "react";
  
  const Questions = ()=>{
+    const [click, setClick] = useState("0");
+    function handleClick(index) {
+        if(click === index){
+            return setClick("0");
+        }
+        setClick(index);
+    }
     
     return (
         <section className="questions">
@@ -11,7 +18,8 @@ import Question from "./question";
             <h3 className="title">Tez-tez so'raladigan savollar</h3>
             <div className="questions__content">
                 {
-                    questionData.map(item => <Question question={item.question} answer={item.answer} />)
+                    faqs.map((faq, index) => <Question key={index} faq={faq} 
+                    onToogle={()=>handleClick(index)} isActive={click === index} />)
                 }
             </div>
             </div>

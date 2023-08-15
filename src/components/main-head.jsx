@@ -1,20 +1,19 @@
-import { Icon } from '@iconify/react';
+
 import { cardData } from '../assets/js/card';
+import Banner from './banner';
 
 const MainHead = () =>{
     return(
         <div className="container-md">
             <section className="main-head">
-                <div className="banner">
-                    <img src="images/baner.png" alt="" />
-                </div>
+                <Banner />
                 <div className='main-head__cards'>
                {
-                cardData.slice(0, 4).map((item)=>{
+                cardData.map((item)=>{
                     return (
                         <div className='card'>
                         <div className={item.class}>
-                        <img src={item.img} alt='' width={30}/>
+                        <img src={item.img} alt='bu icon' width={30}/>
                         </div>
                         <p className='card__text'>{item.text}</p>
                     </div>

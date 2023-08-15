@@ -6,7 +6,7 @@ export const mobiles = [
         name:"Google Play",
     },
     {
-        img:"cib:apple",
+        img: "basil:apple-solid",
         src:"https://apps.apple.com/app/id1331374853?mt=8",
          text:"Загрузите в",
          name:"App Store",

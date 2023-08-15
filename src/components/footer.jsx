@@ -10,7 +10,7 @@ const Footer = ()=>{
                 {
                     socialLinks.map((item)=>{
                         return(
-                            <a href="">
+                            <a href="#">
                             <Icon icon={item.icon} width={22}/>
                             </a>
                         )
@@ -19,7 +19,7 @@ const Footer = ()=>{
                 </div>
                 <div className="footer__right">
                 <span>&copy;{year}. alif nasiya</span>
-                <a href="">
+                <a href="#" className="link">
                     Ommaviy oferta
                 </a>
                 </div>

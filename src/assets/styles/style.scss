@@ -51,6 +51,7 @@
                 @media(max-width:1000px){
                     display: none;
                 }
+               
             }
         }
     }
@@ -76,43 +77,53 @@
         }
     }
 }
-.menu{
-    display: flex;
-    flex-direction: column;
-    gap: $xl;
-    font-size: 18xp;
-    background-color: #fff;
-    opacity: 1 !important;
-    z-index: 5;
-    &__link{
-        background-color: rgba(128, 128, 128, 0.071);
-        padding: 7px;
-        border-radius: $md;
+
+.offcanvas{
+    .offcanvas-header{
+        @include flex(center, space-between);
     }
-    .height{
-        height: $xl-4;
-    }
-    &__buttons{
-        @include flex (center, center);
-        gap:$md;
-        button{
-            background-color: #fff;
-            border: 1px solid rgba(128, 128, 128, 0.225);
-            width: 50%;
+    .menu{
+        display: flex;
+        flex-direction: column;
+        gap: $xl;
+        background-color: #fff;
+        opacity: 1 !important;
+        z-index: 5;
+        &__link{
+            background-color: rgba(128, 128, 128, 0.071);
+            padding: 7px;
+            border-radius: $md;
+            color: $text-color;
+            font-size: 18xp;
+            text-decoration: none;
+        }
+        .height{
             height: $xl-4;
+        }
+        &__buttons{
+            @include flex (center, center);
+            gap:$md;
+            button{
+                background-color: rgba(0, 0, 255, 0.537);
+               color: #fff;
+                width: 50%;
+                height: $xl-4;
+            }
         }
     }
 }
 
-.main-head{
-    padding: $xl-4 0;
-    margin-top: 70px;
-    .banner{
-        img{
-            width: 100%;
-            border-radius: $xl-1;
-        }
+.banner{
+    padding: $xl-4 0 $xl;
+    img{
+        width: 100%;
+        border-radius: $xl-1;
     }
+}
+
+.main-head{
+    margin-top: 40px;
+    padding: $xl-5 0;
     &__cards{
         @include grid(repeat(4, 1fr), $xl-2);
         padding: $xl-3 0;
@@ -292,9 +303,9 @@
         @media(max-width:1000px){
             justify-content: center;
         }
-        a{
+        .link{
             width: 170px;
-            background-color: #000;
+             background-color: #000;
             color: #fff;
             padding: 0 $xl;
             border-radius: $md;
@@ -350,88 +361,76 @@
         .question-wrapper {
             width: 42rem;
             margin: 0 auto;
-            padding: 1rem;
+             padding: $md 0;
             transition: 1s;
             @media (max-width:700px){
                 width: 90%;
             }
             .question {
-               @include flex(flex-start, space-between);
-                font-size: $xl-1;
-                font-weight: 500;
-                color: #0000008f;  
-               padding:  $xl-1 $xl-2;
-               border-radius: 13px;
-               cursor: pointer;
-               text-align: left;
-               @media(max-width:700px){
-                font-size: $xl;
-               }
-               p{
-                margin-bottom: 0;
-                max-width: 80%;
-               }
-                svg {
-                    width: .8rem;
-                    height: 1.2rem;
-                    fill: $text-color;
-                  }
-                  
-                  svg.active {
-                    transform: rotate(180deg);
-                  } 
-                  &:hover{
-                    background-color:$muted;
-                  }   
-          }
-          button {
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-          }
+                @include flex(flex-start, space-between);
+                padding:  $xl-1 $xl-2;
+                border-radius: 13px;
+                cursor: pointer;
+                text-align: left;
+               
+                p{
+                 font-size: $xl-1;
+                 font-weight: 500;
+                 color: #0000008f;  
+                 margin: 0;
+                 max-width: 80%;
+                 @media(max-width:700px){
+                     font-size: $xl;
+                    }
+                }
+                 svg {
+                     width: .8rem;
+                     height: 1.2rem;
+                     fill: $text-color;
+                     margin-top: $sm;
+                   }
+                   
+                   svg.active {
+                     transform: rotate(180deg);
+                   } 
+                   &:hover{
+                     background-color:$muted;
+                   } 
+           }
+           
+        
           
-          button:focus {
-            outline: none;
-          }
-          .answer {
-            display: none;
-          }
-          
-          .answer.active {
-            display: block;
-            padding: $xl $xl-2;
+          .answer{
+             display: block;
             text-align: left;
-            font-weight: light;
-             font-size: 18px;
-            line-height: 1.5;
-            color: $text-color;
-            height: 0%;
-            animation: slidein 0.4s;
-            animation-fill-mode: forwards;
-            @media(max-width:700px){
+            overflow: hidden;
+            transition: height ease 0.2s;
+            &__text{
+                margin: $xl $xl-2;
+                font-weight: light;
+                font-size: 18px;
+               line-height: 1.5;
+               color: $text-color;
+               @media(max-width:700px){
                 font-size: 16px;
+            }
             }
           }
         }
        .question-wrapper.active{
         background-color: $muted;
         border-radius: 13px;
+       }
+      
         .question:hover{
             background-color: transparent;
         }
-       } 
+       
     }
 }
 
-@keyframes slidein {
-    from {
-      opacity: 0.3;
-      transform: translateY(-20%)
-    } to {
-      opacity: 1;
-      transform: translateY(0%);
-    }
-  }
+
+  
 
   .contact{
     background-color: $muted;
@@ -440,16 +439,15 @@
     @media(max-width:400px){
        padding: $xl-4 $md; 
     }
-    .contact__btn{
+    .contact__link{
         background-color: #5ecda2;
         margin-top: $xl-2;
+        color: #fff;
+        font-size: 18px;
+        text-decoration: none;
         &:hover{
             background-color: aquamarine;
         }
-         a{
-            color: #fff;
-            font-size: 18px;
-         }   
     }
   }
 
@@ -465,6 +463,7 @@
     &__links{
         a{
             margin: 0 $xl;
+            color: $text-color;
         }
     }
     &__right{
@@ -476,7 +475,6 @@
   }
 
   .message{
-    // width: 336px;
     .open{
         width: 336px;
         background-color: #000;
@@ -538,7 +536,6 @@
         &__content{
             height: 55%;
             padding: $xl-4 $xl-2 $xl-2 $xl-2;
-            // overflow-y: scroll;
             .answer{
                 position: relative;
                 width: 220px;
@@ -564,7 +561,7 @@
                 outline: none;
             }
             span{
-                display: inline-block;
+                display: none;
                 background-color: $muted;
                  padding-top: 2px;
                 width: 34px;
@@ -573,7 +570,8 @@
                 text-align: center;
                 border-radius: 50%;
             }
-          .green{
+          .icon-show{
+            display: inline-block;
             background-color: #72d6b0;
           }  
         }

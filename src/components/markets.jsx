@@ -11,7 +11,7 @@ const Markets = ()=>{
                     marketsData.map((item)=>{
                         return(
                             <a href="3" className="brend">
-                                <img src={item.img} alt="" />
+                                <img src={item.img} alt="bu yerda hamkorimiz logotipi" />
                             </a>
                         )
                     })

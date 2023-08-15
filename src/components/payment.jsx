@@ -1,4 +1,5 @@
-import { cardData } from "../assets/js/card"
+
+import { payMent } from "../assets/js/payment"
 
 
 const Payment = ()=>{
@@ -8,11 +9,11 @@ const Payment = ()=>{
                 <h3 className="title">Muddatli to’lovga qanday sotib olsa bo’ladi?</h3>
                 <div className="payment__cards">
                     {
-                        cardData.slice(4).map((item)=>{
+                        payMent.map((item)=>{
                             return(
                                 <div className="card">
                                 <div className="card__img">
-                                    <img src={item.img} alt=""/>
+                                    <img src={item.img} alt="bu rasm"/>
                                 </div>
                                 <p className="card__text">{item.text}</p>
                                 </div>

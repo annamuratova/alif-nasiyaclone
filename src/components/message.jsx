@@ -41,7 +41,7 @@ const Message = ()=>{
                 </div>
                 <form className="send-message__form">
                     <input type="text" placeholder="Введете сообщение" value={value} onChange={(e)=> setValue(e.target.value)}/>
-                    <span className={value !== "" ? 'green' : ''}><Icon icon="tabler:arrow-up" width={24}/></span>
+                    <span className={value !== "" ? 'icon-show' : ''}><Icon icon="tabler:arrow-up" width={24}/></span>
                     </form>
             </div>
         </div>

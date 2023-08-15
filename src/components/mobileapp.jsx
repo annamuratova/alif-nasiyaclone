@@ -13,7 +13,7 @@ const MobileApp =()=>{
                     {
                         mobiles.map((item)=>{
                             return(
-                                <a href={item.src}>
+                                <a href={item.src} className='link'>
                                 <Icon icon={item.img} width={25}/>
                                <div>
                                 <span>{item.text}</span>
@@ -26,7 +26,7 @@ const MobileApp =()=>{
                     </div>
                 </div>
                 <div className='mobile-app__right'>
-                    <img src="images/mobil.png" alt="" className='img1'/>
+                    <img src="images/mobil.png" alt="bu telefon rasmi" className='img1'/>
                     <img src="images/mobil1.png" alt="" className='img2'/>
                 </div>
             </div>

@@ -1,9 +1,9 @@
-a {
-  text-decoration: none !important;
-  color: #000 !important;
+.link {
+  text-decoration: none;
+  color: #000;
 }
 
-a:hover {
+.link:hover {
   color: aqua;
 }
 
@@ -105,43 +105,54 @@ a:hover {
   }
 }
 
-.menu {
+.offcanvas .offcanvas-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.offcanvas .menu {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  font-size: 18xp;
   background-color: #fff;
   opacity: 1 !important;
   z-index: 5;
 }
-.menu__link {
+.offcanvas .menu__link {
   background-color: rgba(128, 128, 128, 0.071);
   padding: 7px;
   border-radius: 10px;
+  color: #000;
+  font-size: 18xp;
+  text-decoration: none;
 }
-.menu .height {
+.offcanvas .menu .height {
   height: 40px;
 }
-.menu__buttons {
+.offcanvas .menu__buttons {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
 }
-.menu__buttons button {
-  background-color: #fff;
-  border: 1px solid rgba(128, 128, 128, 0.225);
+.offcanvas .menu__buttons button {
+  background-color: rgba(0, 0, 255, 0.537);
+  color: #fff;
   width: 50%;
   height: 40px;
 }
 
-.main-head {
-  padding: 40px 0;
-  margin-top: 70px;
+.banner {
+  padding: 40px 0 15px;
 }
-.main-head .banner img {
+.banner img {
   width: 100%;
   border-radius: 20px;
+}
+
+.main-head {
+  margin-top: 40px;
+  padding: 45px 0;
 }
 .main-head__cards {
   display: grid;
@@ -367,7 +378,7 @@ a:hover {
     justify-content: center;
   }
 }
-.mobile-app__flex a {
+.mobile-app__flex .link {
   width: 170px;
   background-color: #000;
   color: #fff;
@@ -378,26 +389,26 @@ a:hover {
   justify-content: spase-between;
   gap: 5px;
 }
-.mobile-app__flex a::hover {
+.mobile-app__flex .link::hover {
   color: transparent;
 }
 @media (max-width: 380px) {
-  .mobile-app__flex a {
+  .mobile-app__flex .link {
     padding: 0 10px;
     width: 130px;
   }
 }
-.mobile-app__flex a span {
+.mobile-app__flex .link span {
   font-size: 10px;
 }
-.mobile-app__flex a p {
+.mobile-app__flex .link p {
   margin: 0;
   margin-bottom: 10px;
   line-height: 0.7;
   font-size: 20px;
 }
 @media (max-width: 380px) {
-  .mobile-app__flex a p {
+  .mobile-app__flex .link p {
     font-size: 14px;
   }
 }
@@ -431,7 +442,7 @@ a:hover {
 .questions__content .question-wrapper {
   width: 42rem;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 10px 0;
   transition: 1s;
 }
 @media (max-width: 700px) {
@@ -443,27 +454,28 @@ a:hover {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  font-size: 20px;
-  font-weight: 500;
-  color: rgba(0, 0, 0, 0.5607843137);
   padding: 20px 25px;
   border-radius: 13px;
   cursor: pointer;
   text-align: left;
 }
+.questions__content .question-wrapper .question p {
+  font-size: 20px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.5607843137);
+  margin: 0;
+  max-width: 80%;
+}
 @media (max-width: 700px) {
-  .questions__content .question-wrapper .question {
+  .questions__content .question-wrapper .question p {
     font-size: 15px;
   }
-}
-.questions__content .question-wrapper .question p {
-  margin-bottom: 0;
-  max-width: 80%;
 }
 .questions__content .question-wrapper .question svg {
   width: 0.8rem;
   height: 1.2rem;
   fill: #000;
+  margin-top: 5px;
 }
 .questions__content .question-wrapper .question svg.active {
   transform: rotate(180deg);
@@ -471,31 +483,21 @@ a:hover {
 .questions__content .question-wrapper .question:hover {
   background-color: rgba(128, 128, 128, 0.044);
 }
-.questions__content .question-wrapper button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-}
-.questions__content .question-wrapper button:focus {
-  outline: none;
-}
 .questions__content .question-wrapper .answer {
-  display: none;
-}
-.questions__content .question-wrapper .answer.active {
   display: block;
-  padding: 15px 25px;
   text-align: left;
+  overflow: hidden;
+  transition: height ease 0.2s;
+}
+.questions__content .question-wrapper .answer__text {
+  margin: 15px 25px;
   font-weight: light;
   font-size: 18px;
   line-height: 1.5;
   color: #000;
-  height: 0%;
-  animation: slidein 0.4s;
-  animation-fill-mode: forwards;
 }
 @media (max-width: 700px) {
-  .questions__content .question-wrapper .answer.active {
+  .questions__content .question-wrapper .answer__text {
     font-size: 16px;
   }
 }
@@ -503,20 +505,10 @@ a:hover {
   background-color: rgba(128, 128, 128, 0.044);
   border-radius: 13px;
 }
-.questions__content .question-wrapper.active .question:hover {
+.questions__content .question:hover {
   background-color: transparent;
 }
 
-@keyframes slidein {
-  from {
-    opacity: 0.3;
-    transform: translateY(-20%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0%);
-  }
-}
 .contact {
   background-color: rgba(128, 128, 128, 0.044);
   text-align: center;
@@ -527,16 +519,15 @@ a:hover {
     padding: 40px 10px;
   }
 }
-.contact .contact__btn {
+.contact .contact__link {
   background-color: #5ecda2;
   margin-top: 25px;
-}
-.contact .contact__btn:hover {
-  background-color: aquamarine;
-}
-.contact .contact__btn a {
   color: #fff;
   font-size: 18px;
+  text-decoration: none;
+}
+.contact .contact__link:hover {
+  background-color: aquamarine;
 }
 
 .footer {
@@ -555,6 +546,7 @@ a:hover {
 }
 .footer__links a {
   margin: 0 15px;
+  color: #000;
 }
 .footer__right {
   font-weight: 500;
@@ -656,7 +648,7 @@ a:hover {
   outline: none;
 }
 .message .send-message__form span {
-  display: inline-block;
+  display: none;
   background-color: rgba(128, 128, 128, 0.044);
   padding-top: 2px;
   width: 34px;
@@ -665,7 +657,8 @@ a:hover {
   text-align: center;
   border-radius: 50%;
 }
-.message .send-message__form .green {
+.message .send-message__form .icon-show {
+  display: inline-block;
   background-color: #72d6b0;
 }
 .message .send-message.show {
